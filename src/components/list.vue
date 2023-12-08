@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <slot name="header"></slot>
   <slot name="search">
 
   </slot>
