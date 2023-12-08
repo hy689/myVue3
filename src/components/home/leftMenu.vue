@@ -1,28 +1,38 @@
 <script setup>
+import routes from '../../routes'
 </script>
 
 <template>
   <div class="leftMenu">
-    <el-menu active-text-color="#ffd04b" background-color="#545c64" class="el-menu-vertical-demo" default-active="2"
-      text-color="#fff">
-      <el-sub-menu index="1">
-        <template #title>
-          <el-icon>
-            <location />
-          </el-icon>
-          <span>Navigator One</span>
+    <el-menu background-color="#545c64" active-text-color="#ffd04b" text-color="#fff">
+      <template v-for="route in routes">
+        <template v-if="!route.meta?.isPage">
+          <el-menu-item :index="route.path" v-if="!route.children">
+            <template #title>
+              <el-icon>
+              </el-icon>
+              <span>{{ route.name }}</span>
+            </template></el-menu-item>
+          <el-sub-menu :index="route.path" v-else>
+            <template #title>
+              <el-icon>
+              </el-icon>
+              <span>{{ route.name }}</span>
+            </template>
+            <el-menu-item v-for="cRoute in  route.children" :index="cRoute.path">{{ cRoute.name }}</el-menu-item>
+          </el-sub-menu>
         </template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-sub-menu>
-
+      </template>
     </el-menu>
   </div>
 </template>
 
 <style>
-  .leftMenu{
-    background: #ccc;
-  }
+.leftMenu {
+  background: #ccc;
+}
+
+.el-menu-item {
+  text-align: center;
+}
 </style>

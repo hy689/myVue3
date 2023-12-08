@@ -5,18 +5,14 @@ import Index from './pages/index.vue'
 export default [
   {
     path: '/dome',
-    component: () => import('./pages/dome/scoped/index.vue')
+    component: () => import('./pages/dome/scoped/index.vue'),
+    meta:{isPage:true}
   },
   {
     path: '/',
     component: Home,
     name: '首页',
-    children: [
-      {
-        path: '/index',
-        component: Index,
-      }
-    ]
+    
   },
   {
     path: '/cementData',
@@ -110,6 +106,6 @@ export default [
       }
     ]
   },
-  { path: '/login', component: Login },
+  { path: '/login', component: Login,meta:{isPage:true} },
 
 ]
