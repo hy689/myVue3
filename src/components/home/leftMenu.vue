@@ -11,15 +11,17 @@ import routes from '../../routes'
             <template #title>
               <el-icon>
               </el-icon>
-              <span>{{ route.name }}</span>
+              <span @click="$router.push(route.path)">{{ route.name }}</span>
             </template></el-menu-item>
-          <el-sub-menu  :index="route.path" v-else>
+          <el-sub-menu :index="route.path" v-else>
             <template #title>
               <el-icon>
               </el-icon>
               <span>{{ route.name }}</span>
             </template>
-            <el-menu-item style="background: #545c64;" v-for="cRoute in  route.children" :index="cRoute.path">{{ cRoute.name }}</el-menu-item>
+            <el-menu-item style="background: #545c64;" v-for="cRoute in  route.children" :index="cRoute.path"><span
+                @click="$router.push(cRoute.path)">{{
+                  cRoute.name }}</span></el-menu-item>
           </el-sub-menu>
         </template>
       </template>
@@ -32,10 +34,12 @@ import routes from '../../routes'
   background: #ccc;
 
 }
-.el-aside::-webkit-scrollbar{
+
+.el-aside::-webkit-scrollbar {
   width: 8px;
 }
-.el-aside::-webkit-scrollbar-track{ 
+
+.el-aside::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
@@ -47,6 +51,7 @@ import routes from '../../routes'
 .el-aside::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 .el-menu-item {
   text-align: center;
 }
