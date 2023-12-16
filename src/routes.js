@@ -6,13 +6,12 @@ export default [
   {
     path: '/dome',
     component: () => import('./pages/dome/scoped/index.vue'),
-    meta:{isPage:true}
+    meta: { isPage: true }
   },
   {
     path: '/',
-    component: Home,
+    component: import('./pages/index.vue'),
     name: '首页',
-    
   },
   {
     path: '/cementData',
@@ -84,7 +83,7 @@ export default [
         component: () => import('./pages/inventoryManagement/InventoryInformation.vue')
       }
     ]
-  },{
+  }, {
     path: '/salesManagement',
     name: '销售管理',
     component: Home,
@@ -106,6 +105,6 @@ export default [
       }
     ]
   },
-  { path: '/login', component: Login,meta:{isPage:true} },
+  { path: '/login', component: Login, meta: { isPage: true } },
 
 ]
