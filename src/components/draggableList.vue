@@ -21,7 +21,7 @@ function dragenter(e, index) {
   if (index === currentDragDomIndex) {
     return
   }
-
+  
   const nList = [...props.list]
   const draggedItem = nList[currentDragDomIndex];
   nList.splice(currentDragDomIndex, 1);
@@ -37,6 +37,7 @@ function dragend() {
 
 function dragstart(e, index) {
   currentDragDomIndex = index;
+  return
 }
 
 </script>

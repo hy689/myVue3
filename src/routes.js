@@ -5,6 +5,10 @@ import Index from './pages/index.vue'
 export default [
   {
     path: '/dome',
+    component: () => import('./pages/dome/draggerable/dome.vue'),
+    meta: { isPage: true }
+  },{
+    path: '/scopedDome',
     component: () => import('./pages/dome/scoped/index.vue'),
     meta: { isPage: true }
   },
