@@ -200,8 +200,6 @@ export default {
 <style scoped>
 .list-container {
   display: flex;
-  padding: 10px 10px 20px 10px;
-  height: 100%;
   flex-direction: column;
 }
 

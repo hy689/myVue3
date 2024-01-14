@@ -14,4 +14,10 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),],
+  // 开发调试添加souremap debugger的时候能显示源码
+  build: {
+    sourcemap: true
+  },
+
+
 })

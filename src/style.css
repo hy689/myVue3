@@ -1,9 +1,32 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  --menuText: #bfcbd9;
+  --menuActiveText: #409EFF;
+  --menuBg: #304156;
+  --menuHover: #263445;
 
+  --subMenuBg: #1f2d3d;
+  --subMenuHover: #001528;
+  --subMenuActiveText: #f4f4f5;
+
+  --sideBarWidth: 210px;
+  --navBarHeight: 50px;
+
+  --textGrey:#97a8be;
 }
 
-body {}
+a{
+  text-decoration: none!important;
+}
 
+body {
+  height: 100%;
+}
 
-#app {}
+#app {
+  height: 100%;
+}
